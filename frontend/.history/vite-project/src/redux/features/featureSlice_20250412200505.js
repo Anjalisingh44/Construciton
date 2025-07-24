@@ -1,0 +1,49 @@
+// src/redux/features/featureSlice.js
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  features: [
+    {
+      icon: "/icon.svg",
+      title: "Access up to $100,000",
+      description: "We fund each invoice once approved and collect payment to optimise your cash flow.*"
+    },
+    {
+      icon: "/icon.svg",
+      title: "You choose invoices to get paid",
+      description: "Self-serve online portal available 24/7 or connect from your CRM or invoicing platform."
+    },
+    {
+      icon: "/icon.svg",
+      title: "Simple pricing",
+      description: "Only pay for what you use, if you don't need us, there are no costs."
+    },
+    {
+      icon: "/icon.svg",
+      title: "Click and quick",
+      description: "We fund each invoice once approved and collect payment to optimise your cash flow.*"
+    },
+    {
+      icon: "/icon.svg",
+      title: "Flexible",
+      description: "Self-serve online portal available 24/7 or connect from your CRM or invoicing platform."
+    },
+    {
+      icon: "/icon.svg",
+      title: "Invest in your business",
+      description: "Only pay for what you use, if you don’t need us, there are no costs."
+    }
+  ]
+};
+
+const featureSlice = createSlice({
+  name: "features",
+  initialState,
+  reducers: {
+
+  }
+});
+
+export const selectFeatures = (state) => state.features.features;
+
+export default featureSlice.reducer;
