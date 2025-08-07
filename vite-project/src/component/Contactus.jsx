@@ -115,8 +115,19 @@ const Contactus = () => {
         </div>
 
         {/* Right: Illustration */}
-        <div className="hidden lg:flex items-center justify-center flex-1">
-          <img src={contact} alt="Contact Illustration" className="max-w-full h-auto" />
+        <div className="flex flex-col items-center justify-center w-full px-4 py-8">
+         <div className="mt-8  w-[445px]">
+           <h2 className="text-2xl font-semibold mb-8 text-center text-cyan-600">Our Location</h2>
+      <iframe
+        title="Kathmandu Map"
+       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.3482944175935!2d85.3390888479241!3d27.672783200000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19efc2095609%3A0x8df76accdae7f4d8!2sCapital%20College%20%26%20Research%20Center!5e1!3m2!1sen!2snp!4v1754545695597!5m2!1sen!2snp"
+        width="100%"
+        height="500"
+        className="rounded-md"
+        loading="lazy"
+      ></iframe>
+     
+    </div>
         </div>
       </div>
     </div>
