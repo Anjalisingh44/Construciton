@@ -10,21 +10,21 @@ import Workingmethod from '../component/Workingmethod';
 
 const Home = () => {
   return (
-   <>
+   < div className='overflow-x-hidden'>
     <section id="home" className="pt-[96px]"
     style={{backgroundImage:`url(${home})`,  backgroundSize: 'cover', backgroundPosition: 'center'}}
     >
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between px-[109px] h-[521px]">
+      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-[109px] h-auto lg:h-[521px]">
         
         {/* Left side: Text */}
         <div className="w-[599px] flex flex-col gap-6">
           <div>
-            <h1 className="text-white text-[24px] font-bold leading-tight">
+            <h1 className="text-white text-[30px] font-bold leading-tight">
               Building Structures That Last.
  <br />
             
             </h1>
-            <p className="text-white mt-4 font-semibold">
+            <p className="text-white text-[24px] mt-4 font-semibold">
               From residential to commercial, we deliver safe, on-time, and cost-effective construction  
             without cutting corners.
             </p>
@@ -55,7 +55,7 @@ const Home = () => {
     <OutsourceSection/>
     <Contactus/>
     <QA/>
-   </>
+   </div>
   );
 };
 
