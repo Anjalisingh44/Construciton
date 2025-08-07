@@ -18,12 +18,13 @@ const Contactus = () => {
       className="bg-white w-full flex flex-col items-center justify-center min-h-screen px-4 py-12"
     >
       <div className="mb-10 max-w-3xl text-center">
-        <h1 className="text-2xl font-bold text-cyan-600">Send Your Message</h1>
+        <h1 className="text-2xl font-bold text-cyan-600">Get in Touch</h1>
         <p className="text-lime-600 mt-5">
-          Don’t hesitate to ask us something. Our customer support team is
+          Don’t hesitate to ask us something. Our customer support team is always available
           <br />
         </p>
       </div>
+      <div className="w-full px-4 sm:px-6 lg:px-0">
 
       <div className="flex flex-col lg:flex-row max-w-7xl w-full gap-12 lg:gap-44">
         {/* Left: Form and contact info container */}
@@ -115,8 +116,8 @@ const Contactus = () => {
         </div>
 
         {/* Right: Illustration */}
-        <div className="flex flex-col items-center justify-center w-full px-4 py-8">
-         <div className="mt-8  w-[445px]">
+        <div className="flex flex-col items-center justify-center w-full  py-8 lg:flex-1">
+         <div className="mt-8 w-full max-w-md px-4 sm:px-5 mx-auto ">
            <h2 className="text-2xl font-semibold mb-8 text-center text-cyan-600">Our Location</h2>
       <iframe
         title="Kathmandu Map"
@@ -130,6 +131,7 @@ const Contactus = () => {
     </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
