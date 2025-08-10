@@ -9,13 +9,13 @@ import {
   FaWhatsapp,
   FaLinkedinIn,
 } from "react-icons/fa";
-import contact from "../assets/contact.png";
+
 
 const Contactus = () => {
   return (
     <div
       id="contact"
-      className="bg-white w-full flex flex-col items-center justify-center min-h-screen px-4 py-12"
+      className="bg-white w-full flex flex-col items-center justify-center min-h-screen px-4 "
     >
       <div className="mb-10 max-w-3xl text-center">
         <h1 className="text-2xl font-bold text-cyan-600">Get in Touch</h1>

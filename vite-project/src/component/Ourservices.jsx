@@ -2,53 +2,56 @@
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Feature from "./Feature";
-import renovation from "../assets/renovation.jpeg";
-import realstateThumb from "../assets/real-state.png";
+import design from "../assets/D&B.jpeg";
+import interior from '../assets/interior.jpeg'
+import interiorThumb from "../assets/interior_design.png";
 import { useNavigate } from "react-router-dom";
+import renovation from '../assets/renovation.jpeg'
 
 // OPTIONAL: If you want to import thumbnails, use this style
-import contractingThumb from "../assets/file.png";
-import interiorThumb from "../assets/staircase.png";
-import renovationThumb from "../assets/construction-worker.png";
+import contractingThumb from "../assets/build.png";
+import renovationThumb from "../assets/renovationser.png";
+import  structuralThumb from "../assets/structure.png";
+import architect from '../assets/renovation.jpeg'
 
 
 // Define our service data structure
 const services = [
   {
-    id: "contracting",
-    title: "General Contracting",
+    id: "Design",
+    title: "Design and Build",
     description:
       "Our general contracting services deliver excellence in construction across diverse sectors. With a focus on quality, safety, and timely delivery, we handle projects of all scales from infrastructure development to specialized industrial facilities.",
-    image: renovation, // Large display image
+    image: design, // Large display image
     thumbnail: contractingThumb, // Small button image
-    buttonText: "Contracting",
+    buttonText: "Design and Build",
   },
   {
-    id: "Interior Fit-Out",
-    title: "Interior Fit-Out",
-    description:
-      "Our Interior Fit-Out services specialize in transforming empty spaces into fully functional and visually appealing environments. From partitions, flooring, and ceilings to custom furniture, lighting, and final finishes, we handle every detail to bring your design vision to life.",
-    image: "/banners/interior.jpg", // Replace with actual banner image
-    thumbnail: interiorThumb,
-    buttonText: "Interior Fit-Out",
-  },
-  {
-    id: "realestate",
-    title: "Realestate",
-    description:
-      "Our real estate division focuses on premium property development and management across residential and commercial sectors. We identify high-potential locations and create sustainable, modern spaces that meet the growing demands of urban communities.",
-    image: renovation,
-    thumbnail:realstateThumb,
-    buttonText: "Real Estate",
-  },
-  {
-    id: "Renovation",
+    id: "renovation",
     title: "Renovation",
     description:
-      "We develop tourism infrastructure that showcases natural beauty while preserving cultural heritage. Our projects include eco-friendly resorts, adventure tourism facilities, and cultural experience centers that contribute to sustainable economic growth.",
-    image: "/banners/renovation-full.jpg",
+      "Our Interior Fit-Out services specialize in transforming empty spaces into fully functional and visually appealing environments. From partitions, flooring, and ceilings to custom furniture, lighting, and final finishes, we handle every detail to bring your design vision to life.",
+    image:  renovation, // Replace with actual banner image
     thumbnail: renovationThumb,
     buttonText: "Renovation",
+  },
+  {
+    id: "interior",
+    title: "Interior Design",
+    description:
+      "Our real estate division focuses on premium property development and management across residential and commercial sectors. We identify high-potential locations and create sustainable, modern spaces that meet the growing demands of urban communities.",
+    image: interior,
+    thumbnail:interiorThumb,
+    buttonText: "Interior Design",
+  },
+  {
+    id: "architect",
+    title: "Architectural and Structural Design",
+    description:
+      "We develop tourism infrastructure that showcases natural beauty while preserving cultural heritage. Our projects include eco-friendly resorts, adventure tourism facilities, and cultural experience centers that contribute to sustainable economic growth.",
+    image: architect,
+    thumbnail: structuralThumb,
+    buttonText: "Architectural and Structural Design",
   },
 ];
 
@@ -75,7 +78,7 @@ const Ourservices = () => {
                       className={`w-full flex items-center gap-3 p-4 rounded-md transition-colors ${
                         activeService.id === service.id
                           ? "bg-sky-600 text-white"
-                          : "bg-white border border-gray-200 text-gray-800 hover:bg-gray-50"
+                          : "bg-white border border-gray-200 text-black hover:bg-gray-50"
                       }`}
                     >
                       {service.thumbnail && (
@@ -93,7 +96,7 @@ const Ourservices = () => {
 
               {/* Large Image Display */}
               <div className="lg:w-2/5">
-                <div className="rounded-lg overflow-hidden h-full">
+                <div className="rounded-lg overflow-hidden h-[350px] w-full">
                   <img
                     src={activeService.image}
                     alt={activeService.title}
@@ -104,10 +107,10 @@ const Ourservices = () => {
 
               {/* Description Panel */}
               <div className="lg:w-1/3 flex flex-col justify-center">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                <h2 className="text-xl font-bold text-gray-900 mb-4">
                   {activeService.title}
                 </h2>
-                <p className="text-gray-700 mb-8">
+                <p className="text-black mb-8">
                   {activeService.description}
                 </p>
                 <button
