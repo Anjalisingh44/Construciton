@@ -91,15 +91,15 @@ const Contactus = () => {
             <div className="space-y-4 text-sm">
               <div className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-lime-600" />
-                <span>Lokanthali, Bhaktapur</span>
+                <span>Balkumari, Lalitpur</span>
               </div>
               <div className="flex items-center gap-3">
                 <FaPhoneAlt className="text-lime-600" />
-                <span>+977 9709848068</span>
+                <span>+977 9709848068, +977 9861281739</span>
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-lime-600" />
-                <span>homebizz@gmail.com</span>
+                <span>homebizzeng@gmail.com</span>
               </div>
             </div>
 

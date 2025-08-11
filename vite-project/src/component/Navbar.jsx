@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-6">
           <div className="flex items-center gap-2">
             <FaPhone className="text-blue-900 text-xl" />
-            <span>+977 9709848068</span>
+            <span>+977 9709848068, +977 9861281739</span>
           </div>
           <div className="border-l h-5 border-white"></div>
           <div className="flex items-center gap-2">

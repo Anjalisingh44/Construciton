@@ -19,8 +19,7 @@ const Home = () => {
         <img
           src={home}
           alt="Home Background"
-          className="absolute top-0 left-0 w-full h-full z-0 object-contain object-right-bottom 
-          "
+          className="hidden sm:block absolute top-0 left-0 w-full h-full z-0 object-contain object-right-bottom"
         />
 
         {/* Overlay dim layer */}

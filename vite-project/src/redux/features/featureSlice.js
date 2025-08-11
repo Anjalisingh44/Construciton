@@ -19,10 +19,10 @@ const initialState = {
       description: "Structural Engineer"
     },
     {
-      image:profile,
-      title: "Project Manager",
-      name: "Er Bishwojit Singh",
-      description: "Construction Specialist"
+    
+      title: "Architect",
+      name: "Ar Srijana Duwal",
+      description: "Architect Engineer"
     },
   ]
 };
