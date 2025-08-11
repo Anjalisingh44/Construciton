@@ -16,9 +16,9 @@ const About = () => {
       
         <motion.div
           className="w-full lg:flex-[45%] relative "
-          initial={{ opacity: 0, y: -100, scale: 0.8 }}  // animate from above
-  animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-  transition={{ duration: 1, ease: 'easeOut' }}
+           initial={{ opacity: 0, y: 100 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5}}
         >
           <img
             src={about}

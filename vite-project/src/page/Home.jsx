@@ -13,7 +13,7 @@ import home from '../assets/home.jpeg'
 const Home = () => {
   return (
     <div className="overflow-x-hidden">
-      <section id="home" className="relative pt-[96px] h-auto lg:h-[600px]">
+      <section id="home" className="relative pt-[96px] h-auto lg:h-[550px] bg-gradient-to-br from-cyan-300 via-sky-100 to-white">
         
         {/* Background Image */}
         <img
@@ -23,7 +23,7 @@ const Home = () => {
         />
 
         {/* Overlay dim layer */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-cyan-600 via-cyan-700 to-black opacity-60 z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full  opacity-60 z-10"></div>
 
         {/* Main Content */}
         <div className="relative z-20 max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-[109px] h-full ">
@@ -35,7 +35,7 @@ const Home = () => {
           initial={{ x: -200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
-          className="text-white text-[22px] sm:text-[30px] font-bold leading-tight"
+          className="text-black text-[22px] sm:text-[30px] font-bold leading-tight"
         >
           Building Structures That Last.
         </motion.h1>
@@ -44,7 +44,7 @@ const Home = () => {
           initial={{ x: -200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
-          className="text-white text-[19px] mt-4 font-semibold "
+          className="text-black text-[19px] mt-4 font-semibold "
         >
           From residential to commercial, we deliver safe, on-time, and cost-effective construction  
                 without cutting corners.
@@ -53,7 +53,7 @@ const Home = () => {
             </div>
 
             <div>
-              <button className="bg-white text-[#0284C7] px-6 py-2 rounded-full font-medium text-[16px]  mb-3">
+              <button className="bg-cyan-600 text-white px-6 py-2 rounded-full font-medium text-[16px]  mb-3">
                 Get In Touch
               </button>
 
