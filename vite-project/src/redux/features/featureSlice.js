@@ -1,7 +1,7 @@
 // src/redux/features/featureSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 import profile from '../../assets/prem.jpeg';
-import bishwojit from '../../assets/bbis.jpeg'
+import bishwojit from '../../assets/bishwo.jpeg'
 
 
 const initialState = {
