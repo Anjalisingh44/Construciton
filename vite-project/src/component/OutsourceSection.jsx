@@ -10,7 +10,7 @@ const OutsourceSection = () => {
       <div className="max-w-[1232px] w-full mx-auto flex flex-col items-center gap-8">
         {/* Title and subtitle */}
         <div className="max-w-xl flex flex-col items-center gap-4 text-center">
-          <h2 className="text-3xl font-bold text-cyan-600">Our Team</h2>
+          <h2 className="text-2xl font-bold text-cyan-600">Our Team</h2>
           <p className="text-gray-600 text-base sm:text-lg">
             Our team brings experience, innovation, and integrity to every project.
           </p>

@@ -86,16 +86,16 @@ const Contactus = () => {
           >
             <h2 className="text-2xl font-bold mb-2">LET'S HAVE A TALK</h2>
             <p className="mb-6 text-sm lg:text-base">
-              “Contact Homebizz Engineering to start building your dream project today. We're here to help every step of the way.”
+              Contact Homebizz Engineering to start building your dream project today.
             </p>
             <div className="space-y-4 text-sm">
               <div className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-lime-600" />
-                <span>Balkumari, Lalitpur</span>
+                <span>Balkumari, Kathmandu</span>
               </div>
               <div className="flex items-center gap-3">
                 <FaPhoneAlt className="text-lime-600" />
-                <span>+977 9709848068, +977 9861281739</span>
+                <span>9709848068, 9861281739</span>
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-lime-600" />
