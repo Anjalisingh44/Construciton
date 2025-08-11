@@ -28,12 +28,12 @@ const services = [
   },
   {
     id: "renovation",
-    title: "Renovation",
+    title: "Renovation and Repair",
     description:
       "Our Interior Fit-Out services specialize in transforming empty spaces into fully functional and visually appealing environments. From partitions, flooring, and ceilings to custom furniture, lighting, and final finishes, we handle every detail to bring your design vision to life.",
     image:  renovation, // Replace with actual banner image
     thumbnail: renovationThumb,
-    buttonText: "Renovation",
+    buttonText: "Renovation and Repair",
   },
   {
     id: "interior",
@@ -117,7 +117,7 @@ const Ourservices = () => {
                   onClick={() =>
                     navigate(`/${activeService.id.toLowerCase()}`)
                   }
-                  className="bg-sky-600 text-white px-6 py-3 rounded-full flex items-center gap-2 w-fit hover:bg-sky-900 transition-colors"
+                  className="bg-gradient-to-br from-cyan-700 via-cyan-600 to-cyan-500 text-white px-6 py-3 rounded-full flex items-center gap-2 w-fit hover:bg-sky-900 transition-colors"
                 >
                   {activeService.buttonText}
                   <ArrowRight className="h-5 w-5" />

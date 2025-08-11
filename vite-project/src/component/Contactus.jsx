@@ -86,8 +86,7 @@ const Contactus = () => {
           >
             <h2 className="text-2xl font-bold mb-2">LET'S HAVE A TALK</h2>
             <p className="mb-6 text-sm lg:text-base">
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the...
+              “Contact Homebizz Engineering to start building your dream project today. We're here to help every step of the way.”
             </p>
             <div className="space-y-4 text-sm">
               <div className="flex items-center gap-3">
@@ -121,7 +120,7 @@ const Contactus = () => {
            <h2 className="text-2xl font-semibold mb-8 text-center text-cyan-600">Our Location</h2>
       <iframe
         title="Kathmandu Map"
-       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.3482944175935!2d85.3390888479241!3d27.672783200000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19efc2095609%3A0x8df76accdae7f4d8!2sCapital%20College%20%26%20Research%20Center!5e1!3m2!1sen!2snp!4v1754545695597!5m2!1sen!2snp"
+      src="https://www.google.com/maps?q=27.672000,85.344944&hl=en&z=15&output=embed"
         width="100%"
         height="500"
         className="rounded-md"

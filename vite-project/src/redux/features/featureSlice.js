@@ -8,18 +8,21 @@ const initialState = {
   features: [
     {
       image:profile,
-      title: "Access up to $100,000",
-      description: "We fund each invoice once approved and collect payment to optimise your cash flow.*"
+      title: "Founder",
+      name:"Er Prem Rijal",
+      description: "Civil Engineer"
     },
     {
       image:bishwojit,
-      title: "You choose invoices to get paid",
-      description: "Self-serve online portal available 24/7 or connect from your CRM or invoicing platform."
+      title: "Founder",
+      name: "Er Bishwojit Singh",
+      description: "Structural Engineer"
     },
     {
       image:profile,
-      title: "Simple pricing",
-      description: "Only pay for what you use, if you don't need us, there are no costs."
+      title: "Project Manager",
+      name: "Er Bishwojit Singh",
+      description: "Construction Specialist"
     },
   ]
 };

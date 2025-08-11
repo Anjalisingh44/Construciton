@@ -1,7 +1,8 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import renovation from '../assets/abouttt.png'
-
+import dhapasi from '../assets/Dhapasi.png'
+import Bouddha from '../assets/Bouddha.png'
 const projectData = [
   {
     id: 1,
@@ -12,17 +13,17 @@ const projectData = [
   },
   {
     id: 2,
-    title: "Green Valley Homes",
-    location: "Pokhara, Nepal",
-    image: "/images/greenvalley.jpg",
-    description: "Eco-friendly housing project with sustainable architecture.",
+    title: "Dhapasi Heights Residency",
+    location: "Dhpasi, Kathmandu",
+    image: dhapasi,
+    description: ".",
   },
   {
     id: 3,
-    title: "City Mall Renovation",
-    location: "Lalitpur, Nepal",
-    image: "/images/citymall.jpg",
-    description: "A complete interior and exterior remodeling of an urban mall.",
+    title: "Bouddha Resident",
+    location: "Boudha, Kathmandu",
+    image: Bouddha,
+    description: ".",
   },
 ];
 
