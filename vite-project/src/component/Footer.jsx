@@ -3,7 +3,7 @@ import {
   FaFacebookF,  FaInstagram,  FaLinkedinIn,  FaWhatsapp, FaTiktok, FaPhone,
   FaEnvelope
 } from 'react-icons/fa';
-import logo from '../assets/logo.png'
+import logo from '../../public/logo.png'
 import { IoLocationSharp } from "react-icons/io5";
 
 const Footer = () => {
