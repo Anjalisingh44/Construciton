@@ -69,10 +69,10 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav className="h-[60px] px-4 md:px-10 lg:px-20 flex items-center justify-between">
+      <nav className="h-[80px] px-4 md:px-10 lg:px-20 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center w-[145px] h-[45px]">
-          <img src={logo} alt="Logo" className="w-[100px] h-auto px-2" />
+          <img src={logo} alt="Logo" className="w-[120px] h-auto px-2" />
         </div>
 
         {/* Desktop Menu */}
