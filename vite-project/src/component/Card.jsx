@@ -15,7 +15,7 @@ const Card = () => {
           className=" bg-cyan-600 rounded-xl shadow-md  py-3 text-center w-64"
         >
           
-          <p className="text-white  mt-2">{stat.label}</p>
+          <p className="text-white ">{stat.label}</p>
         </div>
       ))}
     </div>

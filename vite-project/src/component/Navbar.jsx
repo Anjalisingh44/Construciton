@@ -53,7 +53,7 @@ const Navbar = () => {
             <a href="https://www.instagram.com/homebizzengineering?igsh=ZTlhNnlzcnkyeDV2" target="_blank" rel="noopener noreferrer">
            <FaInstagram className="hover:text-gray-300 cursor-pointer" />
             </a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/anjali-singh-11138b271/" target="_blank" rel="noopener noreferrer">
               <FaLinkedinIn className="hover:text-gray-300 cursor-pointer" />
             </a>
             <a href="https://www.tiktok.com/@homebizz_engineering?_t=ZS-8yhN4oCS9ie&_r=1" target="_blank" rel="noopener noreferrer">

@@ -51,7 +51,7 @@ const QA = () => {
 
   return (
     
-    <div className="py-20 bg-gradient-to-br from-white via-sky-50 to-white min-h-screen mt-5" id="faq">
+    <div className="py-20 bg-gradient-to-br from-white via-sky-50 to-white  mt-5" id="faq">
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="  text-xl font-bold text-center text-sky-700 mb-12">बारम्बार सोधिने प्रश्नहरू (FAQ)</h2>
         <div className="space-y-6">

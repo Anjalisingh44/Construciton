@@ -57,7 +57,7 @@ const Workingmethod = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <section className="w-screen bg-gradient-to-br from-white via-sky-50 to-white text-black ">
+    <section className="w-screen bg-gradient-to-br from-white via-sky-50 to-white text-black p-6 ">
       <div className="px-6 max-w-[1400px] mx-auto">
         <h2 className="text-2xl text-cyan-600 font-bold text-center mb-12">
           Homebizz Working Process

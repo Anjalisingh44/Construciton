@@ -65,7 +65,7 @@ const Ourservices = () => {
         <h1 className="text-2xl font-bold text-center mb-10 text-cyan-600">
           Our Services
         </h1>
-        <div className="bg-white min-h-screen py-12">
+        <div className="bg-white py-12">
           <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row gap-8">
               {/* Sidebar with service buttons */}
