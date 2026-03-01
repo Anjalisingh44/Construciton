@@ -1,52 +1,50 @@
 import React, { useRef } from "react";
-import { CheckCircle } from "lucide-react";
-import renovation from '../assets/renovation.jpeg'
+import { CheckCircle2, ShieldCheck, Zap, Users, BarChart3, Clock } from "lucide-react";
+import renovation from '../assets/renovation.jpeg';
 import { motion, useInView } from 'framer-motion';
 
 const features = [
-  "Customized solutions for your specific business needs",
-  "Expert team with years of industry experience",
-  "Data-driven approach for measurable results",
-  "Ongoing support and regular performance reviews",
-  "Scalable services that grow with your business",
-  "Transparent pricing with no hidden fees",
+  { text: "Custom Engineered Structural Solutions", icon: <Zap className="w-5 h-5 text-cyan-400" /> },
+  { text: "Decades of Professional Industry Expertise", icon: <Users className="w-5 h-5 text-cyan-400" /> },
+  { text: "Data-Driven Precision Site Management", icon: <BarChart3 className="w-5 h-5 text-cyan-400" /> },
+  { text: "Zero-Compromise Safety Protocols", icon: <ShieldCheck className="w-5 h-5 text-cyan-400" /> },
+  { text: "Scalable Infrastructure Development", icon: <BarChart3 className="w-5 h-5 text-cyan-400" /> },
+  { text: "Transparent Milestones & Deliverables", icon: <Clock className="w-5 h-5 text-cyan-400" /> },
 ];
 
-// Container variants control staggered children animation
 const containerVariants = {
-  hidden: {}, // no animation needed on container itself
+  hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.3, // children appear one by one, each delayed by 0.3s
+      staggerChildren: 0.1,
     }
   }
 };
 
-// Child variants define how each feature animates
 const childVariants = {
-  hidden: { x: -200, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 0.8 } }
+  hidden: { x: -30, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { duration: 0.5 } }
 };
 
 const Feature = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // animate only once when visible
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section className="py-20" ref={ref}>
-      <div className="container px-4 mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          <div className="lg:w-1/2">
-            <h2 className="text-xl font-bold mb-6 text-cyan-600">
-              Why Choose Our Services
+    <section className="py-24 bg-white" ref={ref}>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+          <div className="w-full lg:w-1/2">
+            <h4 className="text-cyan-600 font-bold uppercase tracking-widest mb-4">Core Strengths</h4>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">
+              Why We Are Leaders in <br /><span className="text-cyan-600 font-extrabold italic">Modern Construction</span>
             </h2>
-            <p className="text-lg text-black dark:text-slate-400 mb-8">
-              We're committed to delivering exceptional value and results that
-              exceed your expectations. Our approach combines innovation,
-              expertise, and personalized attention.
+            <p className="text-slate-600 text-lg mb-10 leading-relaxed">
+              Our commitment to excellence is built on a foundation of integrity and innovation. We leverage advanced materials and engineering methodologies to redefine structural possibilities.
             </p>
+
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
               variants={containerVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -54,17 +52,27 @@ const Feature = () => {
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start gap-3"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-transparent hover:border-cyan-100 hover:bg-cyan-50/30 transition-all duration-300"
                   variants={childVariants}
                 >
-                  <CheckCircle className="h-5 w-5 text-lime-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-black dark:text-black">{feature}</span>
+                  <div className="p-2 bg-white rounded-lg shadow-sm">
+                    {feature.icon}
+                  </div>
+                  <span className="text-slate-700 font-bold text-sm">{feature.text}</span>
                 </motion.div>
               ))}
             </motion.div>
           </div>
-          <div className="lg:w-1/2 bg-slate-200 dark:bg-slate-800 rounded-xl aspect-video overflow-hidden">
-            <img src={renovation} alt="" className="w-full h-full object-cover" />
+
+          <div className="w-full lg:w-1/2 relative">
+            <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl skew-x-1 hover:skew-x-0 transition-transform duration-700">
+              <img src={renovation} alt="Modern construction site" className="w-full h-[500px] object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+            </div>
+
+            {/* Decorative background elements */}
+            <div className="absolute -top-10 -right-10 w-64 h-64 bg-cyan-100 rounded-full blur-3xl opacity-60 -z-10 animate-pulse"></div>
+            <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-100 rounded-full blur-3xl opacity-60 -z-10 animate-pulse transition-all duration-1000"></div>
           </div>
         </div>
       </div>

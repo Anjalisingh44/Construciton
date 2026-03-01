@@ -1,123 +1,112 @@
 import React from 'react';
 import {
-  FaFacebookF,  FaInstagram,  FaLinkedinIn,  FaWhatsapp, FaTiktok, FaPhone,
-  FaEnvelope
+  FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaTiktok, FaPhone,
+  FaEnvelope, FaArrowRight
 } from 'react-icons/fa';
 import logo from '../assets/logo.png'
 import { IoLocationSharp } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer className="bg-cyan-600 text-white py-12 px-4 lg:px-16">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-10">
+    <footer className="bg-slate-900 text-white pt-24 pb-12 overflow-hidden relative border-t border-slate-800">
+      {/* Structural Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
 
-        {/* Logo + Description */}
-        <div>
-          <img
-    src={logo}
-    alt="Homebizz Logo"
-    className="h-20 w-auto bg-white p-2 rounded-xl"
-  />
-          <p className="mt-4 text-sm leading-relaxed text-white">
-            Delivering expert solutions right to your home — quick, dependable, and trusted by countless families.
-          </p>
-        </div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-20">
 
-        {/* Company Links */}
-        <div>
-          <h3 className="font-semibold text-lg mb-4">Company</h3>
-          <ul className="space-y-2 text-sm text-white">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-
-        {/* Services */}
-        <div>
-          <h3 className="font-semibold text-lg mb-4">Services</h3>
-          <ul className="space-y-2 text-sm text-white">
-            <li>Build & Design</li>
-            <li>Renovation</li>
-            <li>Interior-Design</li>
-            <li>Architectural & Structural Design</li>
-          
-          </ul>
-        </div>
-        <div>
-          <h3 className="font-semibold text-lg mb-4">Contact</h3>
-          <ul className="space-y-2 text-sm text-white">
-            
-             <div className="flex items-center gap-2">
-                     <IoLocationSharp className="text-lime-600 text-xl font-bold" />
-                       <span>Balkumari,Kathmandu</span>
-                     </div>
-
-            <div className="flex items-center gap-2">
-                        <FaPhone className="text-lime-600 text-xl" />
-                        <span>+977 9709848068, +977 9861281739</span>
-                      </div>
-            <div className="flex items-center gap-2">
-                       <FaEnvelope className="text-lime-600 text-xl" />
-                       <span>homebizzeng@gmail.com</span>
-                     </div>
-             
-           
-          
-          </ul>
-        </div>
-
-
-       
-        {/* Social + Newsletter */}
-        <div>
-          <h3 className="font-semibold text-lg mb-4">Stay Connected</h3>
-          <div className="flex space-x-3 mb-5 text-white text-xl">
-            
-           <a href="https://www.facebook.com/share/19i8F9CGmT/" target="_blank" rel="noopener noreferrer">
-    <FaFacebookF />
-  </a>
-  <a href="https://www.instagram.com/homebizzengineering?igsh=ZTlhNnlzcnkyeDV2" target="_blank" rel="noopener noreferrer">
-    <FaInstagram />
-  </a>
-  <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
-    <FaLinkedinIn />
-  </a>
-  <a href="https://www.tiktok.com/@homebizz_engineering?_t=ZS-8yhN4oCS9ie&_r=1" target="_blank" rel="noopener noreferrer">
-    <FaTiktok />
-  </a>
-  <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
-    <FaWhatsapp />
-  </a>
-          
+          {/* Identity Column */}
+          <div className="lg:col-span-2 space-y-8">
+            <div className="flex items-center gap-3">
+              <div className="bg-white p-3 rounded-2xl shadow-xl">
+                <img src={logo} alt="Homebizz Logo" className="h-10 w-auto" />
+              </div>
+              <div>
+                <h2 className="font-black text-2xl tracking-tighter">HOME<span className="text-cyan-500">BIZZ</span></h2>
+                <p className="text-[9px] uppercase tracking-[0.4em] font-black text-slate-500">Engineering</p>
+              </div>
+            </div>
+            <p className="text-slate-400 text-sm leading-relaxed max-w-sm font-medium">
+              Delivering structural excellence and visionary architectural designs right to your project — reliable, innovative, and engineered for the future.
+            </p>
+            <div className="flex gap-4">
+              {[
+                { Icon: FaFacebookF, href: "https://www.facebook.com/share/19i8F9CGmT/" },
+                { Icon: FaInstagram, href: "https://www.instagram.com/homebizzengineering?igsh=ZTlhNnlzcnkyeDV2" },
+                { Icon: FaTiktok, href: "https://www.tiktok.com/@homebizz_engineering?_t=ZS-8yhN4oCS9ie&_r=1" },
+                { Icon: FaWhatsapp, href: "https://wa.me/9709848068" }
+              ].map((social, i) => (
+                <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:bg-cyan-600 hover:border-cyan-600 transition-all duration-300">
+                  <social.Icon className="text-sm" />
+                </a>
+              ))}
+            </div>
           </div>
 
-          <h3 className="font-semibold text-lg mb-2">Newsletter</h3>
-          <form className="flex">
-            <input
-              type="email"
-              placeholder="Enter your mail"
-              className="px-3 py-2 text-sm text-black rounded-l-md w-full"
-            />
-            <button
-              type="submit"
-              className="bg-lime-600 hover:bg-lime-700 px-4 py-2 text-sm font-semibold rounded-r-md"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </div>
+          {/* Middle Columns */}
+          <div>
+            <h3 className="text-sm font-black uppercase tracking-[0.2em] mb-8 text-cyan-500 italic">Explore</h3>
+            <ul className="space-y-4 text-sm font-bold text-slate-400">
+              {['Home', 'About', 'Services', 'Team', 'Contact'].map((link) => (
+                <li key={link}>
+                  <a href={`#${link.toLowerCase()}`} className="hover:text-white transition-colors flex items-center group">
+                    <span className="w-0 group-hover:w-3 h-px bg-cyan-500 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white mt-10 pt-6 text-sm text-white flex flex-col lg:flex-row justify-between items-center">
-        <p>&copy; {new Date().getFullYear()} Homebizz. All rights reserved.</p>
-        <div className="space-x-4 mt-4 lg:mt-0">
-          <a href="#" className="hover:text-white">Terms of Use</a>
-          <span>|</span>
-          <a href="#" className="hover:text-white">Privacy Policy</a>
+          <div>
+            <h3 className="text-sm font-black uppercase tracking-[0.2em] mb-8 text-cyan-500 italic">Specialties</h3>
+            <ul className="space-y-4 text-sm font-bold text-slate-400">
+              {['Build & Design', 'Renovation', 'Interior Design', 'Master Planning'].map((service) => (
+                <li key={service} className="hover:text-white transition-colors cursor-default">{service}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div className="space-y-8">
+            <h3 className="text-sm font-black uppercase tracking-[0.2em] text-cyan-500 italic">Connect</h3>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <IoLocationSharp className="text-cyan-500 text-xl mt-0.5" />
+                <div className="text-slate-400 text-sm font-medium">Balkumari,<br />Kathmandu, Nepal</div>
+              </div>
+              <div className="flex items-start gap-4">
+                <FaPhone className="text-cyan-500 text-lg mt-0.5" />
+                <div className="text-slate-400 text-sm font-medium">9709848068<br />9861281739</div>
+              </div>
+            </div>
+
+            <div className="pt-4">
+              <h4 className="text-[10px] uppercase font-black tracking-widest text-slate-500 mb-4">Newsletter</h4>
+              <form className="relative">
+                <input
+                  type="email"
+                  placeholder="Engineering insights..."
+                  className="w-full bg-slate-800 border-none rounded-2xl py-3 px-5 text-sm focus:ring-2 focus:ring-cyan-500 outline-none text-white placeholder-slate-600"
+                />
+                <button className="absolute right-1 top-1 bottom-1 bg-cyan-600 hover:bg-cyan-500 px-4 rounded-xl transition-all">
+                  <FaArrowRight className="text-xs" />
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-slate-500 text-[10px] font-bold uppercase tracking-[0.2em]">
+            &copy; {new Date().getFullYear()} Homebizz Engineering. Structural Integrity Guaranteed.
+          </p>
+          <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest">
+            <a href="#" className="text-slate-500 hover:text-white transition-colors">Privacy</a>
+            <a href="#" className="text-slate-500 hover:text-white transition-colors">Terms</a>
+          </div>
         </div>
       </div>
     </footer>

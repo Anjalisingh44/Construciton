@@ -1,57 +1,49 @@
-// src/components/ServicesComponent.jsx
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Feature from "./Feature";
 import design from "../assets/D&B.jpeg";
-import interior from '../assets/interior.jpeg'
-import interiorThumb from "../assets/interior_design.png";
-import { useNavigate } from "react-router-dom";
-import renovation from '../assets/renovation.jpeg'
-
-// OPTIONAL: If you want to import thumbnails, use this style
+import interior from '../assets/interior.jpeg';
+import renovation from '../assets/renovation.jpeg';
+import architect from '../assets/renovation.jpeg';
 import contractingThumb from "../assets/build.png";
 import renovationThumb from "../assets/renovationser.png";
-import  structuralThumb from "../assets/structure.png";
-import architect from '../assets/renovation.jpeg'
+import structuralThumb from "../assets/structure.png";
+import interiorThumb from "../assets/interior_design.png";
+import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
-
-// Define our service data structure
 const services = [
   {
     id: "Design",
     title: "Design and Build",
-    description:
-      "Our general contracting services deliver excellence in construction across diverse sectors. With a focus on quality, safety, and timely delivery, we handle projects of all scales from infrastructure development to specialized industrial facilities.",
-    image: design, // Large display image
-    thumbnail: contractingThumb, // Small button image
-    buttonText: "Design and Build",
+    thumbnail: contractingThumb,
+    description: "Integrated design and construction services for seamless project delivery. We manage everything from initial concept to the final structure.",
+    image: design,
+    buttonText: "Explore Design & Build",
   },
   {
     id: "renovation",
     title: "Renovation and Repair",
-    description:
-      "Our Interior Fit-Out services specialize in transforming empty spaces into fully functional and visually appealing environments. From partitions, flooring, and ceilings to custom furniture, lighting, and final finishes, we handle every detail to bring your design vision to life.",
-    image:  renovation, // Replace with actual banner image
     thumbnail: renovationThumb,
-    buttonText: "Renovation and Repair",
+    description: "Giving new life to existing structures. Our renovation experts handle structural repairs, aesthetic upgrades, and complete modernizations.",
+    image: renovation,
+    buttonText: "View Renovation Services",
   },
   {
     id: "interior",
     title: "Interior Design",
-    description:
-      "Our real estate division focuses on premium property development and management across residential and commercial sectors. We identify high-potential locations and create sustainable, modern spaces that meet the growing demands of urban communities.",
+    thumbnail: interiorThumb,
+    description: "Creating functional and beautiful interior spaces. We specialize in custom finishes, spatial planning, and high-end residential interiors.",
     image: interior,
-    thumbnail:interiorThumb,
-    buttonText: "Interior Design",
+    buttonText: "See Interior Portfolios",
   },
   {
     id: "architect",
     title: "Architectural and Structural Design",
-    description:
-      "We develop tourism infrastructure that showcases natural beauty while preserving cultural heritage. Our projects include eco-friendly resorts, adventure tourism facilities, and cultural experience centers that contribute to sustainable economic growth.",
-    image: architect,
     thumbnail: structuralThumb,
-    buttonText: "Architectural and Structural Design",
+    description: "Precision-driven architectural and structural planning that combines aesthetic beauty with engineering integrity.",
+    image: architect,
+    buttonText: "Architectural Solutions",
   },
 ];
 
@@ -60,78 +52,94 @@ const Ourservices = () => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <div id="ourservices" className="px-4 sm:px-6 lg:px-20">
-        <h1 className="text-2xl font-bold text-center mb-10 text-cyan-600">
-          Our Services
-        </h1>
-        <div className="bg-white min-h-screen py-12">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col lg:flex-row gap-8">
-              {/* Sidebar with service buttons */}
-              <div className="lg:w-1/4">
-                <div className="space-y-4">
-                  {services.map((service) => (
-                    <button
-                      key={service.id}
-                      onClick={() => setActiveService(service)}
-                      className={`w-full flex items-center gap-3 p-4 rounded-md transition-colors ${
-                        activeService.id === service.id
-                          ? "bg-sky-600 text-white"
-                          : "bg-white border border-gray-200 text-black hover:bg-gray-50"
-                      }`}
-                    >
-                      {service.thumbnail && (
-                        <img
-                          src={service.thumbnail}
-                          alt={`${service.title} icon`}
-                          className="w-10 h-10 rounded object-cover"
-                        />
-                      )}
-                      <span className="font-medium">{service.title}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
+    <section id="ourservices" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h4 className="text-cyan-600 font-bold uppercase tracking-widest mb-3 text-xs">What We Offer</h4>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">Mastering Every Phase of <br /><span className="text-cyan-600">Construction</span></h2>
+          <div className="w-16 h-1 bg-cyan-500 mx-auto rounded-full"></div>
+        </div>
 
-              {/* Large Image Display */}
-              <div className="lg:w-2/5">
-                <div className="rounded-lg overflow-hidden h-[350px] w-full">
+        <div className="flex flex-col lg:flex-row gap-8 items-start">
+          {/* Service Navigation */}
+          <div className="w-full lg:w-1/3 flex flex-col gap-2">
+            {services.map((service) => (
+              <button
+                key={service.id}
+                onClick={() => setActiveService(service)}
+                className={`group flex items-center gap-4 p-4 rounded-xl transition-all duration-300 text-left border ${activeService.id === service.id
+                  ? "bg-slate-900 border-slate-900 shadow-lg translate-x-1"
+                  : "bg-white border-slate-100 text-slate-600 hover:border-slate-200"
+                  }`}
+              >
+                <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 border border-slate-100 bg-slate-50">
+                  <img src={service.thumbnail} alt="" className="w-full h-full object-cover" />
+                </div>
+                <div className="flex-grow">
+                  <h3 className={`font-bold text-base ${activeService.id === service.id ? "text-white" : "text-slate-800"}`}>
+                    {service.title}
+                  </h3>
+                </div>
+                <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${activeService.id === service.id ? "text-cyan-400 translate-x-0 opacity-100" : "text-slate-300 -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
+                  }`} />
+              </button>
+            ))}
+          </div>
+
+          {/* Service Display Content */}
+          <div className="w-full lg:w-2/3">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeService.id}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.3 }}
+                className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm flex flex-col md:flex-row"
+              >
+                <div className="w-full md:w-1/2 h-[300px]">
                   <img
                     src={activeService.image}
                     alt={activeService.title}
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-              </div>
-
-              {/* Description Panel */}
-              <div className="lg:w-1/3 flex flex-col justify-center">
-                <h2 className="text-xl font-bold text-gray-900 mb-4">
-                  {activeService.title}
-                </h2>
-                <p className="text-black mb-8">
-                  {activeService.description}
-                </p>
-                <button
-                  onClick={() =>
-                    navigate(`/${activeService.id.toLowerCase()}`)
-                  }
-                  className="bg-gradient-to-br from-cyan-700 via-cyan-600 to-cyan-500 text-white px-6 py-3 rounded-full flex items-center gap-2 w-fit hover:bg-sky-900 transition-colors"
-                >
-                  {activeService.buttonText}
-                  <ArrowRight className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
+                <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-6 h-px bg-cyan-500"></span>
+                    <span className="text-cyan-600 font-bold uppercase tracking-widest text-[10px]">Excellence Defined</span>
+                  </div>
+                  <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">{activeService.title}</h3>
+                  <p className="text-slate-600 text-base leading-relaxed mb-6">
+                    {activeService.description}
+                  </p>
+                  <button
+                    onClick={() => navigate(`/${activeService.id.toLowerCase()}`)}
+                    className="btn-cyan-elegant !text-[11px] !px-8 !py-3 w-fit uppercase tracking-widest shadow-xl"
+                  >
+                    {service_label(activeService.id)}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </button>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
+        </div>
 
-          {/* Feature Section */}
+        <div className="mt-16">
           <Feature />
         </div>
       </div>
-    </>
+    </section>
   );
+};
+
+// Helper for button labels
+const service_label = (id) => {
+  if (id === "Design") return "Design Details";
+  if (id === "renovation") return "Renovation Plans";
+  if (id === "interior") return "Interior Gallery";
+  return "Engineering Solutions";
 };
 
 export default Ourservices;
