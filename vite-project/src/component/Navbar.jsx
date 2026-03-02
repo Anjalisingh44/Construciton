@@ -85,10 +85,10 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Desktop CTA (Adding one small attractive button to make it authentic) */}
+        {/* Desktop CTA */}
         <div className="hidden lg:block">
           <HashLink smooth to="/#contact">
-            <button className="btn-premium bg-slate-900 text-white !px-5 !py-2 !text-[10px] uppercase tracking-widest">
+            <button className="btn-cyan-elegant !px-6 !py-2.5 !text-[10px] uppercase tracking-[0.15em] font-black shadow-lg">
               Consult Now
             </button>
           </HashLink>
@@ -99,9 +99,9 @@ const Navbar = () => {
           className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none"
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <span className={`w-6 h-0.5 bg-slate-900 transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`w-6 h-0.5 bg-slate-900 transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`w-6 h-0.5 bg-slate-900 transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-slate-900 transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : 'bg-cyan-600'}`}></span>
+          <span className={`w-6 h-0.5 bg-slate-900 transition-all ${isMobileMenuOpen ? 'opacity-0' : 'bg-slate-900'}`}></span>
+          <span className={`w-6 h-0.5 bg-slate-900 transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : 'bg-cyan-600'}`}></span>
         </button>
       </nav>
 
@@ -114,13 +114,13 @@ const Navbar = () => {
               smooth
               to={link.href}
               onClick={handleLinkClick}
-              className="text-lg font-black text-slate-900 hover:text-cyan-600 transition-colors uppercase tracking-tight"
+              className="text-lg font-black text-slate-800 hover:text-cyan-600 transition-colors uppercase tracking-[0.05em]"
             >
               {link.label}
             </HashLink>
           ))}
           <HashLink smooth to="/#contact" onClick={handleLinkClick}>
-            <button className="btn-premium bg-cyan-600 text-white w-full !py-4 uppercase tracking-widest">
+            <button className="btn-cyan-elegant w-full !py-4 uppercase tracking-[0.2em] font-black shadow-xl">
               Get Started
             </button>
           </HashLink>

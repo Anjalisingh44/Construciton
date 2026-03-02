@@ -68,7 +68,7 @@ const Ourservices = () => {
                 key={service.id}
                 onClick={() => setActiveService(service)}
                 className={`group flex items-center gap-4 p-5 rounded-2xl transition-all duration-300 text-left border ${activeService.id === service.id
-                  ? "bg-slate-900 border-slate-900 shadow-xl translate-x-1"
+                  ? "bg-brand border-brand shadow-xl translate-x-1"
                   : "bg-white border-slate-100 text-slate-600 hover:border-slate-200"
                   }`}
               >
@@ -80,7 +80,7 @@ const Ourservices = () => {
                     {service.title}
                   </h3>
                 </div>
-                <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${activeService.id === service.id ? "text-cyan-400 translate-x-0 opacity-100" : "text-slate-300 -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
+                <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${activeService.id === service.id ? "text-white translate-x-0 opacity-100" : "text-slate-300 -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0"
                   }`} />
               </button>
             ))}

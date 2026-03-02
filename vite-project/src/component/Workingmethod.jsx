@@ -76,7 +76,7 @@ const Workingmethod = () => {
             >
               <div className="bg-slate-800/40 border border-slate-700/50 p-8 rounded-[2rem] text-center h-full transition-all duration-500 hover:bg-slate-800 hover:shadow-2xl hover:shadow-cyan-500/5 border-b-4 hover:border-b-cyan-500">
                 <div className="mb-8 relative">
-                  <div className="w-20 h-20 bg-cyan-500/5 rounded-2xl mx-auto flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                  <div className="w-20 h-20 bg-brand/5 rounded-2xl mx-auto flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                     <img
                       src={step.image}
                       alt={step.title}
@@ -84,7 +84,7 @@ const Workingmethod = () => {
                     />
                   </div>
                   {/* Step Number Badge */}
-                  <span className="absolute -top-3 -right-3 bg-slate-950 border border-slate-700 text-cyan-400 font-black text-[10px] w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="absolute -top-3 -right-3 bg-slate-950 border border-slate-700 text-brand font-black text-[10px] w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
                     {index + 1}
                   </span>
                 </div>

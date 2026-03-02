@@ -113,7 +113,7 @@ const Contactus = () => {
               </div>
             </div>
 
-            <div className="bg-cyan-600 rounded-[2.5rem] p-8 text-white relative overflow-hidden group border border-white/5">
+            <div className="bg-brand rounded-[2.5rem] p-8 text-white relative overflow-hidden group border border-white/10 shadow-xl shadow-cyan-600/10">
               <div className="absolute -top-10 -right-10 p-10 opacity-10 group-hover:scale-125 transition-transform duration-1000 rotate-12">
                 <FaEnvelope className="text-[10rem]" />
               </div>
@@ -122,7 +122,7 @@ const Contactus = () => {
                 Send us an email for bulk project handling, tenders, and long-term contracts.
               </p>
               <a href="mailto:homebizzeng@gmail.com" className="flex items-center gap-4 font-black text-base group/link transition-all hover:text-white/80">
-                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/10 group-hover/link:border-white transition-all">
+                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/10 group-hover/link:border-white transition-all shadow-inner">
                   <FaEnvelope className="w-5 h-5 text-white" />
                 </div>
                 <span className="tracking-tight uppercase text-sm">homebizzeng@gmail.com</span>
