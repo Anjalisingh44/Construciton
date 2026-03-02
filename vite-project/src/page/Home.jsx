@@ -7,6 +7,7 @@ import OutsourceSection from '../component/OutsourceSection';
 import QA from '../component/QA';
 import Workingmethod from '../component/Workingmethod';
 import { motion } from 'framer-motion';
+import { HashLink } from 'react-router-hash-link';
 import heroBg from '../assets/Adds.jpeg';
 
 const Home = () => {
@@ -32,14 +33,18 @@ const Home = () => {
                 transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
                 className="flex flex-col gap-4 items-end pointer-events-auto"
               >
-                <button className="btn-cyan-elegant !text-[10px] md:!text-[11px] !px-8 md:!px-12 !py-3 md:!py-4 uppercase tracking-[0.25em] font-black shadow-2xl backdrop-blur-md">
-                  Portfolios
-                  <span className="ml-2 inline-block">→</span>
-                </button>
+                <HashLink smooth to="/#projects">
+                  <button className="btn-cyan-elegant !text-[10px] md:!text-[11px] !px-8 md:!px-12 !py-3 md:!py-4 uppercase tracking-[0.25em] font-black shadow-2xl backdrop-blur-md">
+                    Portfolios
+                    <span className="ml-2 inline-block">→</span>
+                  </button>
+                </HashLink>
 
-                <button className="btn-outline-elegant !text-[10px] md:!text-[11px] !px-8 md:!px-12 !py-3 md:!py-4 uppercase tracking-[0.25em] font-black bg-white/10 border-white/30 hover:bg-slate-900 hover:text-white transition-all shadow-xl">
-                  Contact Us
-                </button>
+                <HashLink smooth to="/#contact">
+                  <button className="btn-outline-elegant !text-[10px] md:!text-[11px] !px-8 md:!px-12 !py-3 md:!py-4 uppercase tracking-[0.25em] font-black bg-white/10 border-white/30 hover:bg-slate-900 hover:text-white transition-all shadow-xl">
+                    Contact Us
+                  </button>
+                </HashLink>
               </motion.div>
             </div>
 

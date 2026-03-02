@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { HashLink } from 'react-router-hash-link';
 import aboutImg from '../assets/homebizz8.jpeg';
 
 const About = () => {
@@ -83,9 +84,11 @@ const About = () => {
               ))}
             </div>
 
-            <button className="btn-cyan-elegant !text-[11px] !px-10 !py-4 uppercase tracking-widest shadow-2xl">
-              Learn Our Legacy
-            </button>
+            <HashLink smooth to="#ourservices">
+              <button className="btn-cyan-elegant !text-[11px] !px-10 !py-4 uppercase tracking-widest shadow-2xl">
+                Learn Our Legacy
+              </button>
+            </HashLink>
           </motion.div>
         </div>
       </div>
