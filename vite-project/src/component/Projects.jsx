@@ -65,10 +65,10 @@ const projectData = [
 const Projects = () => {
   const navigate = useNavigate();
   return (
-    <section id='projects' className="py-16 bg-slate-50">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-          <div className="max-w-2xl px-4 border-l-4 border-cyan-500">
+    <section id='projects' className="py-20 md:py-24 bg-slate-50">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-20 gap-8">
+          <div className="max-w-2xl px-6 border-l-4 border-cyan-500">
             <h4 className="text-cyan-600 font-bold uppercase tracking-[0.25em] mb-4 text-[10px]">Recent Portfolios</h4>
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tight">
               Evidence of <br /><span className="text-cyan-600">Engineering Mastery</span>
@@ -76,7 +76,7 @@ const Projects = () => {
           </div>
           <button
             onClick={() => navigate('/portfolio')}
-            className="btn-cyan-elegant hidden md:flex !text-[11px] !px-8 !py-3 uppercase tracking-widest shadow-2xl"
+            className="btn-cyan-elegant hidden md:flex !text-[12px] !px-12 !py-4 uppercase tracking-widest shadow-2xl"
           >
             View All Projects
           </button>
@@ -99,7 +99,7 @@ const Projects = () => {
         <div className="mt-20 text-center md:hidden px-6">
           <button
             onClick={() => navigate('/portfolio')}
-            className="btn-cyan-elegant w-full !py-4 shadow-xl uppercase tracking-widest font-black"
+            className="btn-cyan-elegant w-full !py-5 shadow-xl uppercase tracking-widest font-black"
           >
             Explore Full Portfolio
           </button>

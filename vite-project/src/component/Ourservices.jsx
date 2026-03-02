@@ -52,23 +52,23 @@ const Ourservices = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="ourservices" className="py-16 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <div className="text-center mb-10">
+    <section id="ourservices" className="py-20 md:py-24 bg-white">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
+        <div className="text-center mb-16">
           <h4 className="text-cyan-600 font-bold uppercase tracking-widest mb-3 text-xs">What We Offer</h4>
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">Mastering Every Phase of <br /><span className="text-cyan-600">Construction</span></h2>
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4">Mastering Every Phase of <br /><span className="text-cyan-600">Construction</span></h2>
           <div className="w-16 h-1 bg-cyan-500 mx-auto rounded-full"></div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-6 items-start">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
           {/* Service Navigation */}
-          <div className="w-full lg:w-1/3 flex flex-col gap-2">
+          <div className="w-full lg:w-1/3 flex flex-col gap-3">
             {services.map((service) => (
               <button
                 key={service.id}
                 onClick={() => setActiveService(service)}
-                className={`group flex items-center gap-4 p-4 rounded-xl transition-all duration-300 text-left border ${activeService.id === service.id
-                  ? "bg-slate-900 border-slate-900 shadow-lg translate-x-1"
+                className={`group flex items-center gap-4 p-5 rounded-2xl transition-all duration-300 text-left border ${activeService.id === service.id
+                  ? "bg-slate-900 border-slate-900 shadow-xl translate-x-1"
                   : "bg-white border-slate-100 text-slate-600 hover:border-slate-200"
                   }`}
               >
@@ -95,29 +95,29 @@ const Ourservices = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.3 }}
-                className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm flex flex-col md:flex-row"
+                className="bg-slate-50 rounded-3xl overflow-hidden shadow-sm flex flex-col md:flex-row border border-slate-100"
               >
-                <div className="w-full md:w-1/2 h-[300px]">
+                <div className="w-full md:w-1/2 h-[350px] md:h-auto">
                   <img
                     src={activeService.image}
                     alt={activeService.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-[3s] hover:scale-105"
                   />
                 </div>
-                <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 mb-3">
+                <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-4">
                     <span className="w-6 h-px bg-cyan-500"></span>
                     <span className="text-cyan-600 font-bold uppercase tracking-widest text-[10px]">Excellence Defined</span>
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">{activeService.title}</h3>
-                  <p className="text-slate-600 text-base leading-relaxed mb-6">
+                  <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-tight">{activeService.title}</h3>
+                  <p className="text-slate-600 text-base leading-relaxed mb-8 opacity-80">
                     {activeService.description}
                   </p>
                   <button
-                    onClick={() => navigate(`/${activeService.id.toLowerCase()}`)}
-                    className="btn-cyan-elegant !text-[11px] !px-8 !py-3 w-fit uppercase tracking-widest shadow-xl"
+                    onClick={() => navigate(`/portfolio/${activeService.id === 'Design' ? '1' : activeService.id === 'renovation' ? '6' : '3'}`)}
+                    className="btn-cyan-elegant !text-[11px] !px-10 !py-4 w-fit uppercase tracking-widest shadow-xl"
                   >
-                    {service_label(activeService.id)}
+                    View Case Study
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </button>
                 </div>
@@ -126,20 +126,12 @@ const Ourservices = () => {
           </div>
         </div>
 
-        <div className="mt-16">
+        <div className="mt-20">
           <Feature />
         </div>
       </div>
     </section>
   );
-};
-
-// Helper for button labels
-const service_label = (id) => {
-  if (id === "Design") return "Design Details";
-  if (id === "renovation") return "Renovation Plans";
-  if (id === "interior") return "Interior Gallery";
-  return "Engineering Solutions";
 };
 
 export default Ourservices;

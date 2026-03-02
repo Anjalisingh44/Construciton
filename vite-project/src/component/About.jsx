@@ -8,13 +8,13 @@ const About = () => {
   const isInView = useInView(ref, { triggerOnce: true, amount: 0.2 });
 
   return (
-    <section id="about" className="py-16 bg-white relative overflow-hidden" ref={ref}>
+    <section id="about" className="py-20 md:py-24 bg-white relative overflow-hidden" ref={ref}>
       {/* Decorative Background Element */}
       <div className="absolute top-0 right-0 w-1/4 h-full bg-slate-50 -skew-x-12 transform translate-x-1/2 "></div>
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px]"></div>
 
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
 
           {/* Image Side - Correct Aspect Ratio & Content Visibility */}
           <motion.div
