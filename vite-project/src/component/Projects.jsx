@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 // New Assets
 import hb2 from '../assets/homebizz2.jpeg';
@@ -62,6 +63,7 @@ const projectData = [
 ];
 
 const Projects = () => {
+  const navigate = useNavigate();
   return (
     <section id='projects' className="py-16 bg-slate-50">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
@@ -72,7 +74,10 @@ const Projects = () => {
               Evidence of <br /><span className="text-cyan-600">Engineering Mastery</span>
             </h2>
           </div>
-          <button className="btn-cyan-elegant hidden md:flex !text-[11px] !px-8 !py-3 uppercase tracking-widest shadow-2xl">
+          <button
+            onClick={() => navigate('/portfolio')}
+            className="btn-cyan-elegant hidden md:flex !text-[11px] !px-8 !py-3 uppercase tracking-widest shadow-2xl"
+          >
             View All Projects
           </button>
         </div>
@@ -92,7 +97,10 @@ const Projects = () => {
         </div>
 
         <div className="mt-20 text-center md:hidden px-6">
-          <button className="btn-cyan-elegant w-full !py-4 shadow-xl uppercase tracking-widest font-black">
+          <button
+            onClick={() => navigate('/portfolio')}
+            className="btn-cyan-elegant w-full !py-4 shadow-xl uppercase tracking-widest font-black"
+          >
             Explore Full Portfolio
           </button>
         </div>

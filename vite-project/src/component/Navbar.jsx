@@ -62,10 +62,9 @@ const Navbar = () => {
 
       {/* Main Navbar */}
       <nav className="h-[70px] px-6 md:px-12 lg:px-20 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center w-[145px] h-[45px]">
+        <HashLink smooth to="/#home" className="flex items-center w-[145px] h-[45px]">
           <img src={logo} alt="Logo" className="w-[100px] h-auto px-2" />
-        </div>
+        </HashLink>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex justify-center flex-1 gap-12">
