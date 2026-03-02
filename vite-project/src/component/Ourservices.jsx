@@ -52,9 +52,9 @@ const Ourservices = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="ourservices" className="py-20 bg-white">
+    <section id="ourservices" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h4 className="text-cyan-600 font-bold uppercase tracking-widest mb-3 text-xs">What We Offer</h4>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">Mastering Every Phase of <br /><span className="text-cyan-600">Construction</span></h2>
           <div className="w-16 h-1 bg-cyan-500 mx-auto rounded-full"></div>

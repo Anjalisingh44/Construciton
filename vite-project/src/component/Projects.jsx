@@ -63,9 +63,9 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <section id='projects' className="py-24 bg-slate-50">
+    <section id='projects' className="py-16 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl px-4 border-l-4 border-cyan-500">
             <h4 className="text-cyan-600 font-bold uppercase tracking-[0.25em] mb-4 text-[10px]">Recent Portfolios</h4>
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tight">

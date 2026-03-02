@@ -7,7 +7,7 @@ const About = () => {
   const isInView = useInView(ref, { triggerOnce: true, amount: 0.2 });
 
   return (
-    <section id="about" className="py-24 bg-white relative overflow-hidden" ref={ref}>
+    <section id="about" className="py-16 bg-white relative overflow-hidden" ref={ref}>
       {/* Decorative Background Element */}
       <div className="absolute top-0 right-0 w-1/4 h-full bg-slate-50 -skew-x-12 transform translate-x-1/2 "></div>
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px]"></div>
@@ -51,7 +51,7 @@ const About = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           >
-            <div className="mb-10 space-y-4">
+            <div className="mb-8 space-y-4">
               <div className="flex items-center gap-3">
                 <span className="w-12 h-0.5 bg-cyan-600 rounded-full"></span>
                 <h4 className="text-cyan-600 font-black uppercase tracking-[0.3em] text-[10px]">The Construction DNA</h4>
@@ -62,7 +62,7 @@ const About = () => {
               </h2>
             </div>
 
-            <p className="text-slate-500 text-sm md:text-base leading-relaxed mb-10 font-medium opacity-90 max-w-xl">
+            <p className="text-slate-500 text-sm md:text-base leading-relaxed mb-8 font-medium opacity-90 max-w-xl">
               Homebizz provides specialized structural engineering and complete construction management. We merge heritage aesthetics with seismic-resistant innovation to build landmarks that endure.
             </p>
 
