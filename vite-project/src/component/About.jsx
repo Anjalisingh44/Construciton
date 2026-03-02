@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import aboutImg from '../assets/Adds.jpeg';
+import aboutImg from '../assets/homebizz8.jpeg';
 
 const About = () => {
   const ref = useRef(null);
@@ -12,8 +12,8 @@ const About = () => {
       <div className="absolute top-0 right-0 w-1/4 h-full bg-slate-50 -skew-x-12 transform translate-x-1/2 "></div>
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px]"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
           {/* Image Side - Correct Aspect Ratio & Content Visibility */}
           <motion.div
@@ -26,11 +26,16 @@ const About = () => {
               <img
                 src={aboutImg}
                 alt="Construction excellence at Homebizz"
-                className="w-full h-auto max-h-[650px] object-contain transition-transform duration-[2s] hover:scale-105"
+                className="w-full h-full object-cover aspect-[4/5] md:aspect-square lg:aspect-[4/5] transition-transform duration-[2s] hover:scale-105"
               />
+
+              {/* Stat Overlay to make it authentic */}
+              <div className="absolute top-6 left-6 p-4 glass-badge rounded-2xl shadow-lg border border-white/20">
+                <p className="text-white text-[10px] font-black tracking-widest uppercase">Verified Excellence</p>
+              </div>
             </div>
 
-            {/* Premium Stat Badge */}
+            {/* Premium Stat Badge - Adjusted Position */}
             <motion.div
               initial={{ scale: 0, rotate: -10 }}
               animate={isInView ? { scale: 1, rotate: 0 } : {}}

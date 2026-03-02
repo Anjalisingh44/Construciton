@@ -64,7 +64,7 @@ const projectData = [
 const Projects = () => {
   return (
     <section id='projects' className="py-16 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl px-4 border-l-4 border-cyan-500">
             <h4 className="text-cyan-600 font-bold uppercase tracking-[0.25em] mb-4 text-[10px]">Recent Portfolios</h4>
