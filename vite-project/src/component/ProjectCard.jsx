@@ -41,7 +41,7 @@ const ProjectCard = ({ project }) => {
 
         <div className="mt-auto">
           <button
-            onClick={() => navigate('/portfolio')}
+            onClick={() => navigate(`/portfolio/${project.id}`)}
             className="flex items-center gap-2 text-slate-900 font-black text-[10px] uppercase tracking-[0.15em] group/btn border-b-2 border-transparent hover:border-cyan-500 transition-all pb-1"
           >
             Project Details

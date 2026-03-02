@@ -14,11 +14,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/portfolio/:id" element={<Portfolio />} />
         {/* Dynamic catch-all for service detail buttons if needed */}
-        <Route path="/design" element={<Portfolio />} />
-        <Route path="/renovation" element={<Portfolio />} />
-        <Route path="/interior" element={<Portfolio />} />
-        <Route path="/architect" element={<Portfolio />} />
+        <Route path="/design" element={<Portfolio id="1" />} />
+        <Route path="/renovation" element={<Portfolio id="2" />} />
+        <Route path="/interior" element={<Portfolio id="3" />} />
+        <Route path="/architect" element={<Portfolio id="6" />} />
       </Routes>
       <Footer />
     </div>
