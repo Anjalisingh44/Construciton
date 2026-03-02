@@ -1,8 +1,11 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { MapPin } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ProjectCard = ({ project }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col h-full">
       {/* Image Container with Overlay */}
@@ -37,7 +40,10 @@ const ProjectCard = ({ project }) => {
         </p>
 
         <div className="mt-auto">
-          <button className="flex items-center gap-2 text-slate-900 font-black text-[10px] uppercase tracking-[0.15em] group/btn border-b-2 border-transparent hover:border-cyan-500 transition-all pb-1">
+          <button
+            onClick={() => navigate('/portfolio')}
+            className="flex items-center gap-2 text-slate-900 font-black text-[10px] uppercase tracking-[0.15em] group/btn border-b-2 border-transparent hover:border-cyan-500 transition-all pb-1"
+          >
             Project Details
             <FaArrowRight className="w-2.5 h-2.5 text-cyan-500 transition-transform group-hover/btn:translate-x-1.5" />
           </button>
