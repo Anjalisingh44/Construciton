@@ -62,7 +62,7 @@ const About = () => {
                 <span className="w-12 h-0.5 bg-cyan-600 rounded-full"></span>
                 <h4 className="text-cyan-600 font-black uppercase tracking-[0.3em] text-[10px]">The Construction DNA</h4>
               </div>
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-[1.1] tracking-tight">
                 Architecting <br />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-blue-600">Futures Today</span>
               </h2>

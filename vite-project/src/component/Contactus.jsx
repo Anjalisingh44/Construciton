@@ -20,9 +20,9 @@ const Contactus = () => {
           <div className="flex-1">
             <div className="mb-16">
               <h4 className="text-cyan-600 font-black uppercase tracking-[0.3em] mb-4 text-[10px]">Communication Hub</h4>
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight">
-                Architect Your <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-blue-600">Vision With Us</span>
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-[1.1] tracking-tight">
+                Architecting <br />
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-blue-600">Futures Today</span>
               </h2>
               <p className="text-slate-500 text-sm md:text-lg font-medium max-w-lg opacity-90 leading-relaxed italic border-l-2 border-slate-200 pl-6">
                 Connect with our specialized structural engineering team to discuss blueprints, execution timelines, or technical audits.
@@ -113,19 +113,19 @@ const Contactus = () => {
               </div>
             </div>
 
-            <div className="bg-slate-900 rounded-[3rem] p-10 text-white relative overflow-hidden group border border-white/5">
-              <div className="absolute -top-10 -right-10 p-10 opacity-5 group-hover:scale-125 transition-transform duration-1000 rotate-12">
-                <FaEnvelope className="text-[12rem]" />
+            <div className="bg-cyan-600 rounded-[2.5rem] p-8 text-white relative overflow-hidden group border border-white/5">
+              <div className="absolute -top-10 -right-10 p-10 opacity-10 group-hover:scale-125 transition-transform duration-1000 rotate-12">
+                <FaEnvelope className="text-[10rem]" />
               </div>
-              <h4 className="font-black text-2xl mb-4 italic tracking-tight">Direct Liaison</h4>
-              <p className="text-slate-400 text-sm mb-10 opacity-80 leading-relaxed font-medium">
-                For corporate tendering, structural audits, or specialized engineering consultancy, reach our executive hub directly.
+              <h4 className="font-black text-xl mb-3 italic tracking-tight">Corporate Inquiry?</h4>
+              <p className="text-cyan-50 text-xs mb-8 opacity-90 leading-relaxed font-medium">
+                Send us an email for bulk project handling, tenders, and long-term contracts.
               </p>
-              <a href="mailto:homebizzeng@gmail.com" className="flex items-center gap-5 font-black text-lg group/link transition-all hover:text-cyan-400">
-                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover/link:border-cyan-500 group-hover/link:bg-cyan-500/10 transition-all">
-                  <FaEnvelope className="w-6 h-6 text-cyan-400" />
+              <a href="mailto:homebizzeng@gmail.com" className="flex items-center gap-4 font-black text-base group/link transition-all hover:text-white/80">
+                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/10 group-hover/link:border-white transition-all">
+                  <FaEnvelope className="w-5 h-5 text-white" />
                 </div>
-                <span className="tracking-tight uppercase text-base">homebizzeng@gmail.com</span>
+                <span className="tracking-tight uppercase text-sm">homebizzeng@gmail.com</span>
               </a>
             </div>
           </div>
