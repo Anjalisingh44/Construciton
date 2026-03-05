@@ -8,7 +8,7 @@ import QA from '../component/QA';
 import Workingmethod from '../component/Workingmethod';
 import { motion } from 'framer-motion';
 import { HashLink } from 'react-router-hash-link';
-import heroBg from '../assets/Adds.jpeg';
+import heroBg from '../assets/banner.jpg.jpeg';
 
 const Home = () => {
   return (
@@ -16,22 +16,22 @@ const Home = () => {
       {/* Hero Section - The "Cinema-Wide" Proportional Layout */}
       <section id="home" className="relative w-full pt-[80px] md:pt-[105px] bg-slate-50">
 
-        {/* The Frame - Calculated for perfect "Above the Fold" visibility */}
+        {/* The Frame - Reverted to Floating Sidebar Layout */}
         <div className="w-full relative overflow-hidden group shadow-2xl">
-          <div className="relative aspect-[16/9] md:aspect-[21/9] lg:aspect-[25/9] max-h-[700px] w-full bg-slate-900">
+          <div className="relative h-auto md:aspect-[21/9] lg:aspect-[25/9] max-h-[700px] w-full bg-slate-900 overflow-hidden">
             <img
               src={heroBg}
               alt="Homebizz Structural Excellence"
-              className="w-full h-full object-cover object-center transition-transform duration-[4s] group-hover:scale-[1.03]"
+              className="w-full h-auto md:h-full md:object-cover transition-transform duration-[4s] group-hover:scale-[1.03]"
             />
 
-            {/* Action Sidebar - Clean buttons on the right */}
+            {/* Action Sidebar - Floating buttons */}
             <div className="absolute inset-0 flex items-center justify-end px-6 md:px-12 lg:px-24 pointer-events-none">
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-                className="flex flex-col gap-4 items-end pointer-events-auto"
+                className="hidden md:flex flex-col gap-4 items-end pointer-events-auto"
               >
                 <HashLink smooth to="/#projects">
                   <button className="btn-cyan-elegant !text-[10px] md:!text-[11px] !px-8 md:!px-12 !py-3 md:!py-4 uppercase tracking-[0.25em] font-black shadow-2xl backdrop-blur-md">
@@ -41,14 +41,14 @@ const Home = () => {
                 </HashLink>
 
                 <HashLink smooth to="/#contact">
-                  <button className="btn-outline-elegant !text-[10px] md:!text-[11px] !px-8 md:!px-12 !py-3 md:!py-4 uppercase tracking-[0.25em] font-black bg-white/10 border-white/30 hover:bg-slate-900 hover:text-white transition-all shadow-xl">
-                    Contact Us
+                  <button className="btn-cyan-elegant !text-[10px] md:!text-[11px] !px-8 md:!px-12 !py-3 md:!py-4 uppercase tracking-[0.25em] font-black shadow-2xl">
+                    Contact Our Team
                   </button>
                 </HashLink>
               </motion.div>
             </div>
 
-            {/* Subtle Gradient to make it feel expensive */}
+            {/* Subtle Gradient */}
             <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-transparent to-transparent pointer-events-none"></div>
           </div>
         </div>

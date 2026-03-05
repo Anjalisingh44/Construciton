@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { HashLink } from 'react-router-hash-link';
-import aboutImg from '../assets/homebizz8.jpeg';
+import aboutImg from '../assets/About.jpg.jpeg';
 
 const About = () => {
   const ref = useRef(null);
