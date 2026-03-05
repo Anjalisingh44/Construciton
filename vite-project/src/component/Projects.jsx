@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import api from "../utils/api";
 
 // New Assets
 import hb2 from '../assets/homebizz2.jpeg';
@@ -11,9 +12,9 @@ import hb5 from '../assets/homebizz5.jpeg';
 import hb6 from '../assets/homebizz6.jpeg';
 import hb7 from '../assets/homebizz7.jpeg';
 
-const projectData = [
+const staticProjectData = [
   {
-    id: 1,
+    _id: "s1",
     title: "Modern Residential Villa",
     location: "Balkumari, Kathmandu",
     category: "Residential",
@@ -21,7 +22,7 @@ const projectData = [
     description: "Premium living with contemporary design and seismic-resistant structural engineering.",
   },
   {
-    id: 2,
+    _id: "s2",
     title: "Corporate High-Rise",
     location: "Minbhawan, Kathmandu",
     category: "Commercial",
@@ -29,7 +30,7 @@ const projectData = [
     description: "Multi-story commercial complex featuring glass facades and smart utility systems.",
   },
   {
-    id: 3,
+    _id: "s3",
     title: "Luxury Hillside Retreat",
     location: "Nagarkot, Bhaktapur",
     category: "Hospitality",
@@ -37,7 +38,7 @@ const projectData = [
     description: "Boutique resort construction blending heritage aesthetics with modern structural safety.",
   },
   {
-    id: 4,
+    _id: "s4",
     title: "Urban Housing Block",
     location: "Thimi, Bhaktapur",
     category: "Residential",
@@ -45,7 +46,7 @@ const projectData = [
     description: "Optimized multi-unit development focused on sustainable lighting and ventilation.",
   },
   {
-    id: 5,
+    _id: "s5",
     title: "Industrial Storage Hub",
     location: "Imadol, Lalitpur",
     category: "Industrial",
@@ -53,7 +54,7 @@ const projectData = [
     description: "Large-span steel structure designed for heavy-duty logistics and operational efficiency.",
   },
   {
-    id: 6,
+    _id: "s6",
     title: "Heritage Restoration",
     location: "Patan, Lalitpur",
     category: "Cultural",
@@ -64,6 +65,29 @@ const projectData = [
 
 const Projects = () => {
   const navigate = useNavigate();
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  const fetchProjects = async () => {
+    try {
+      const { data } = await api.get('/projects');
+      if (data && data.length > 0) {
+        setProjects(data);
+      } else {
+        setProjects(staticProjectData);
+      }
+    } catch (err) {
+      console.error(err);
+      setProjects(staticProjectData);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section id='projects' className="py-20 md:py-24 bg-slate-50">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
@@ -83,9 +107,9 @@ const Projects = () => {
         </div>
 
         <div className="grid gap-x-8 gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {projectData.map((project, index) => (
+          {projects.map((project, index) => (
             <motion.div
-              key={project.id}
+              key={project._id || project.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}

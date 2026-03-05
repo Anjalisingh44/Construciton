@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, CheckCircle2 } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';
+import api from '../utils/api';
 
 // Assets
 import hb2 from '../assets/homebizz2.jpeg';
@@ -11,9 +12,9 @@ import hb5 from '../assets/homebizz5.jpeg';
 import hb6 from '../assets/homebizz6.jpeg';
 import hb7 from '../assets/homebizz7.jpeg';
 
-const allProjects = [
+const staticProjects = [
     {
-        id: 1,
+        _id: "s1",
         title: "The Vertex Villa",
         location: "Balkumari, Kathmandu",
         category: "Residential",
@@ -24,7 +25,7 @@ const allProjects = [
         specs: ["Seismic-Resistant Structure", "Smart Climate Control", "Custom Steel Framework"]
     },
     {
-        id: 2,
+        _id: "s2",
         title: "Skyline Corporate Hub",
         location: "Minbhawan, Kathmandu",
         category: "Commercial",
@@ -35,7 +36,7 @@ const allProjects = [
         specs: ["Advanced Facade Engineering", "Fire-Safe Infrastructure", "High-Load Foundation"]
     },
     {
-        id: 3,
+        _id: "s3",
         title: "Zenith Hillside Resort",
         location: "Nagarkot, Bhaktapur",
         category: "Hospitality",
@@ -46,7 +47,7 @@ const allProjects = [
         specs: ["Terrain Stabilization", "Heritage-Infused Finish", "Eco-Friendly Construction"]
     },
     {
-        id: 4,
+        _id: "s4",
         title: "Urban Housing Block",
         location: "Thimi, Bhaktapur",
         category: "Residential",
@@ -57,7 +58,7 @@ const allProjects = [
         specs: ["Thermal Insulation", "Rainwater Harvesting", "Modular Design"]
     },
     {
-        id: 5,
+        _id: "s5",
         title: "Industrial Storage Hub",
         location: "Imadol, Lalitpur",
         category: "Industrial",
@@ -68,7 +69,7 @@ const allProjects = [
         specs: ["Steel Frame Precision", "Heavy-Duty Flooring", "Optimized Logistics Flow"]
     },
     {
-        id: 6,
+        _id: "s6",
         title: "Heritage Restoration",
         location: "Patan, Lalitpur",
         category: "Cultural",
@@ -83,14 +84,38 @@ const allProjects = [
 const Portfolio = ({ id: staticId }) => {
     const navigate = useNavigate();
     const { id: paramId } = useParams();
+    const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    // Find project by ID (either from URL or from static prop)
+    // Find project by ID
     const currentId = paramId || staticId;
-    const project = allProjects.find(p => p.id === parseInt(currentId));
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        fetchProjects();
     }, [currentId]);
+
+    const fetchProjects = async () => {
+        try {
+            const { data } = await api.get('/projects');
+            if (data && data.length > 0) {
+                setProjects(data);
+            } else {
+                setProjects(staticProjects);
+            }
+        } catch (err) {
+            console.error(err);
+            setProjects(staticProjects);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const project = projects.find(p => String(p._id) === String(currentId) || String(p.id) === String(currentId));
+
+    if (loading) {
+        return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+    }
 
     if (currentId && !project) {
         return (
@@ -136,7 +161,7 @@ const Portfolio = ({ id: staticId }) => {
                         <div className="w-full lg:w-1/2 pt-4">
                             <div className="flex items-center gap-2 text-cyan-600 mb-6 font-black uppercase text-[11px] tracking-[0.3em]">
                                 <MapPin className="w-4 h-4" />
-                                {project.location}
+                                {project.location || "Kathmandu, Nepal"}
                             </div>
 
                             <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1]">{project.title}</h1>
@@ -147,7 +172,7 @@ const Portfolio = ({ id: staticId }) => {
 
                             {/* Specs Grid */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-                                {project.specs.map((spec, i) => (
+                                {(project.specs || ["Seismic-Resistant Structure", "High-Performance Foundation"]).map((spec, i) => (
                                     <div key={i} className="flex items-center gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-100">
                                         <CheckCircle2 className="w-5 h-5 text-cyan-500" />
                                         <span className="text-[11px] font-black uppercase text-slate-700 tracking-wider font-montserrat">{spec}</span>
@@ -158,12 +183,12 @@ const Portfolio = ({ id: staticId }) => {
                             <div className="flex items-center gap-8 py-6 border-t border-slate-100 pt-10">
                                 <div>
                                     <h5 className="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-1">Project Status</h5>
-                                    <p className="text-sm font-black text-slate-900">{project.status}</p>
+                                    <p className="text-sm font-black text-slate-900">{project.status || "Completed"}</p>
                                 </div>
                                 <div className="w-px h-8 bg-slate-200"></div>
                                 <div>
                                     <h5 className="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-1">Construction Scale</h5>
-                                    <p className="text-sm font-black text-slate-900">{project.area}</p>
+                                    <p className="text-sm font-black text-slate-900">{project.area || "Dynamic Scale"}</p>
                                 </div>
                             </div>
 
@@ -178,7 +203,7 @@ const Portfolio = ({ id: staticId }) => {
                         </div>
                     </motion.div>
                 ) : (
-                    // Default All Projects View (Fallback)
+                    // Default All Projects View
                     <div>
                         <div className="border-l-4 border-cyan-500 pl-8 mb-16">
                             <h4 className="text-cyan-600 font-black uppercase tracking-[0.4em] text-[11px] mb-4">Official Portfolio</h4>
@@ -188,10 +213,14 @@ const Portfolio = ({ id: staticId }) => {
                             </h1>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {allProjects.map(p => (
-                                <div key={p.id} onClick={() => navigate(`/portfolio/${p.id}`)} className="cursor-pointer group">
+                            {projects.map(p => (
+                                <div key={p._id || p.id} onClick={() => navigate(`/portfolio/${p._id || p.id}`)} className="cursor-pointer group">
                                     <div className="rounded-3xl overflow-hidden mb-4 shadow-xl">
-                                        <img src={p.image} className="aspect-video object-cover transition-transform group-hover:scale-105" />
+                                        <img
+                                            src={p.image}
+                                            alt={p.title}
+                                            className="aspect-video object-cover transition-transform group-hover:scale-105"
+                                        />
                                     </div>
                                     <h3 className="font-black text-lg text-slate-900 uppercase tracking-widest">{p.title}</h3>
                                 </div>
