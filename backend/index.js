@@ -14,10 +14,10 @@ app.use(cors({
         'http://localhost:5173',
         'https://homebizz-frontend.onrender.com',
         /\.onrender\.com$/,
-        /\.cloudflare\.com$/,
-        // Add your custom domain below (replace with your actual domain)
-        'https://www.homebizz.com',
-        'https://homebizz.com'
+        'https://www.homebizz.com.np',
+        'https://homebizz.com.np',
+        'http://www.homebizz.com.np',
+        'http://homebizz.com.np'
     ],
     credentials: true
 }));
