@@ -9,7 +9,18 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://homebizz-frontend.onrender.com',
+        /\.onrender\.com$/,
+        /\.cloudflare\.com$/,
+        // Add your custom domain below (replace with your actual domain)
+        'https://www.homebizz.com',
+        'https://homebizz.com'
+    ],
+    credentials: true
+}));
 app.use(morgan('dev'));
 
 // Connect to MongoDB
