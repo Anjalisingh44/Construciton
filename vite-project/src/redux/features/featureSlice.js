@@ -1,28 +1,35 @@
 // src/redux/features/featureSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 import profile from '../../assets/prem.jpeg';
-import bishwojit from '../../assets/bishwo.jpeg'
-import sudin from '../../assets/sudin.jpeg'
+import bishwojit from '../../assets/bishwo.jpeg';
+import sudin from '../../assets/sudin.jpeg';
+import sakar from '../../assets/sakar.jpeg';
 
 
 const initialState = {
   features: [
     {
       image: profile,
-      title: "Founder",
-      name: "Er Prem Rijal",
+      title: "Chief Executive Officer",
+      name: "Er. Prem Rijal",
       description: "Civil Engineer"
     },
     {
       image: bishwojit,
-      title: "Founder",
-      name: "Er Bishwojit Singh",
+      title: "HR Manager",
+      name: "Er. Bishwojit Singh",
       description: "Structural Engineer"
     },
     {
       image: sudin,
-      title: "Founder",
-      name: "Sudin Shrestha",
+      title: "Managing Director",
+      name: "Sudin Goja Shrestha",
+      description: "Civil Engineer"
+    },
+    {
+      image: sakar,
+      title: "Civil Engineer",
+      name: "Er. Sakar Ghimire",
       description: "Civil Engineer"
     },
   ]

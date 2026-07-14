@@ -38,7 +38,7 @@ const OutsourceSection = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
@@ -60,8 +60,8 @@ const OutsourceSection = () => {
                           className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                         />
                       ) : (
-                        <div className="w-full h-full bg-slate-200 flex items-center justify-center text-slate-400">
-                          <span className="text-[10px] font-bold uppercase tracking-widest">Architect</span>
+                        <div className="w-full h-full bg-slate-200 flex items-center justify-center text-slate-400 px-4 text-center">
+                          <span className="text-[10px] font-bold uppercase tracking-widest leading-tight">{member.description || "Engineer"}</span>
                         </div>
                       )}
                     </div>
